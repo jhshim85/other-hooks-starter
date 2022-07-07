@@ -1,6 +1,6 @@
 import ProfilePage from './ProfilePage';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <div className="dash">
       <aside>
@@ -15,7 +15,7 @@ const Dashboard = () => {
         </nav>
       </aside>
 
-      <ProfilePage />
+      <ProfilePage userInfo={props.userInfo}/>
     </div>
   )
 }

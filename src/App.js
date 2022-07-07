@@ -28,7 +28,7 @@ function App() {
 
       {
         showProfile
-        ? <MembersArea />
+        ? <MembersArea userInfo={user} />
         : <AllPosts />
       }
     </div>

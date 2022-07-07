@@ -1,20 +1,20 @@
 
 
-const ProfilePage = () => {
+const ProfilePage = ({userInfo}) => {
   return(
     <section className="profile">
       <ul>
         <li>
           <h3>Display name</h3>
-          <p className="displayName">**USER-NAME-GOES-HERE**</p>
+          <p className="displayName">{userInfo.name}</p>
         </li>
         <li>
           <h3>Avatar</h3>
-          <img src="http://placeimg.com/500/500/arch" alt="avatar for **_______**" />
+          <img src={userInfo.avatar} alt={`avatar for ${userInfo.name}`} />
         </li>
         <li>
           <h3>Bio</h3>
-          <p>**USER-BIO-GOES-HERE**</p>
+          <p>{userInfo.bio}</p>
         </li>
       </ul>
     </section>
