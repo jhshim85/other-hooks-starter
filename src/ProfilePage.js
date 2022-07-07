@@ -6,15 +6,15 @@ const ProfilePage = () => {
       <ul>
         <li>
           <h3>Display name</h3>
-          <p className="displayName">[n/a]</p>
+          <p className="displayName">**USER-NAME-GOES-HERE**</p>
         </li>
         <li>
           <h3>Avatar</h3>
-          <img src="https://via.placeholder.com/600" alt="avatar for [n/a]" />
+          <img src="http://placeimg.com/500/500/arch" alt="avatar for **_______**" />
         </li>
         <li>
           <h3>Bio</h3>
-          <p>[n/a]</p>
+          <p>**USER-BIO-GOES-HERE**</p>
         </li>
       </ul>
     </section>
