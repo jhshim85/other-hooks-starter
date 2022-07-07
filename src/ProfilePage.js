@@ -1,20 +1,25 @@
-
+import { useContext } from "react";
+import { mySatellite } from "./App";
 
 const ProfilePage = () => {
+
+  const userDeets = useContext(mySatellite);
+  console.log(userDeets);
+
   return(
     <section className="profile">
       <ul>
         <li>
           <h3>Display name</h3>
-          <p className="displayName">**USER-NAME-GOES-HERE**</p>
+          <p className="displayName">{userDeets.name}</p>
         </li>
         <li>
           <h3>Avatar</h3>
-          <img src="http://placeimg.com/500/500/arch" alt="avatar for **_______**" />
+          <img src={userDeets.avatar} alt={`avatar for ${userDeets.name}`} />
         </li>
         <li>
           <h3>Bio</h3>
-          <p>**USER-BIO-GOES-HERE**</p>
+          <p>{userDeets.bio}</p>
         </li>
       </ul>
     </section>
