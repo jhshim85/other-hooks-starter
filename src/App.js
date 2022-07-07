@@ -5,24 +5,13 @@ import AllPosts from './AllPosts';
 
 function App() {
 
-  const [userName, setUserName] = useState(users[0].name);
-  const [userAvatar, setUserAvatar] = useState(users[0].avatar);
-  const [userTheme, setUserTheme] = useState(users[0].theme);
-  const [userBio, setUserBio] = useState(users[0].bio);
-
+  const [user, setUser] = useState(users[0]);
   const [showProfile, setShowProfile] = useState(true);
 
-  const switchUser = (e) => {
-    const personNumber = e.target.id;
-
-    setUserName(users[personNumber].name)
-    setUserAvatar(users[personNumber].avatar)
-    setUserTheme(users[personNumber].theme)
-    setUserBio(users[personNumber].bio)
-  }
+  const switchUser = (e) => setUser(users[e.target.id]);
 
   return (
-    <div className={`app ${userTheme}`}>
+    <div className={`app ${user.theme}`}>
       <header>
         <h1>MyShmace</h1>
 
