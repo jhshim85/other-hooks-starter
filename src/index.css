@@ -1,5 +1,24 @@
-body {
-  margin: 0;
+/*
+==========================
+SETUP
+==========================
+*/
+
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a,h1,h2,h3,h4,h5,h6,p{margin:0;padding:0}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+*, *:before, *:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+.sr-only:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+
+/*
+==========================
+GLOBAL STYLES + TYPOGRAPHY
+==========================
+*/
+
+html {
+  font-size: 125%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +26,322 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #eee;
+}
+
+.app {
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1200px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: normal;
+  font-weight: lighter;
+  margin: 0 0 2rem 0;
+  line-height: 1;
+  letter-spacing: -2.5px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.6px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin: 0 0 0.5rem 0;
+}
+
+h4 {
+  font-size: 1.2rem;
+  letter-spacing: 0.7px;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+}
+
+header {
+  padding: 40px;
+}
+
+.pageFlip {
+  margin: 20px 0 0 0;
+  padding: 20px 0 0 0;
+  border-top: 2px solid #999;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 25px;
+  border-radius: 0;
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*
+==========================
+MEMBERS AREA
+==========================
+*/
+
+.dash {
+  flex: 1 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dash aside,
+.profile {
+  flex: 1 0 30%;
+  text-align: left;
+}
+
+.dash aside {
+  padding: 15px 25px 15px 15px;
+  background: #444;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.dash aside li {
+  margin: 15px 0;
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+
+.profile {
+  flex: 1 0 70%;
+  padding: 0 30px;
+}
+
+.profile li {
+  margin: 20px 0;
+}
+
+.profile h3 {
+  font-size: 1.8rem;
+  /* font-style: italic; */
+  font-weight: lighter;
+  letter-spacing: -0.7px;
+}
+
+.displayName {
+  font-size: 2rem;
+}
+
+.profile img {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+}
+
+
+/*
+==========================
+POST FEED
+==========================
+*/
+
+.history {
+  width: 90%;
+  margin: 40px auto 0 auto;
+  max-width: 800px;
+}
+
+.historyNav {
+  margin: 20px 0 30px 0;
+}
+
+.historyNav ul {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.historyNav li {
+  margin: 0 5px;
+  padding: 10px 25px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+
+/* ---- SINGLE POST STYLES ---- */
+
+.singlePost {
+  width: 90%;
+  margin: 0 auto 5px auto;
+  padding: 15px 20px;
+  border: 2px solid #000;
+  display: flex;
+  align-items: flex-start;
+}
+
+.profilePic {
+  width: 15%;
+  max-width: 150px;
+  min-width: 80px;
+}
+
+.profilePic img {
+  border-radius: 100%;
+}
+
+.textBox {
+  flex: 1 0 auto;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.textBox h4 {
+  border-bottom: 1px solid #555;
+}
+
+.highlight .singlePost {
+  margin-top: 20px;
+  padding: 25px 30px;
+  border: 4px solid #000;
+  font-size: 1.2rem;
+}
+
+.highlight .profilePic {
+  width: 20%;
+  max-width: 200px;
+}
+
+.highlight .textBox {
+  margin-left: 30px;
+}
+
+.highlight h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+}
+
+
+
+
+/*
+==========================
+THEMES
+==========================
+*/
+
+/* ---- soft ----- */
+
+.soft {
+  background: rgb(182, 243, 157);
+}
+
+.soft button,
+.soft .historyNav li {
+  border-radius: 10px;
+  box-shadow: 0 0 10px 10px rgb(214, 166, 55);
+}
+
+.soft .dash aside,
+.soft .singlePost {
+  background: rgb(5, 44, 5);
+  border-radius: 0 30px 30px 0;
+  color: #fff;
+}
+
+.soft .singlePost {
+  border-radius: 30px;
+}
+
+.soft img {
+  box-shadow: 0 0 10px 10px rgb(214, 166, 55);
+}
+
+/* ---- cool ----- */
+
+.cool {
+  background: rgb(74, 84, 129);
+  color: rgb(240, 240, 240);
+}
+
+.cool button,
+.cool .historyNav li {
+  border-radius: 30px;
+  background: rgb(74, 84, 129);
+}
+
+.cool button:hover,
+.cool .historyNav li:hover,
+.cool button:focus,
+.cool .historyNav li:focus {
+  background: rgb(45, 50, 77);
+}
+
+.cool .dash aside,
+.cool .singlePost {
+  background: rgb(74, 84, 129);
+  border: 2px solid rgb(45, 50, 77);
+  box-shadow: inset -3px 3px 5px rgb(45, 50, 77);
+}
+
+.cool img {
+  border: 3px solid rgb(59, 59, 59);
+}
+
+/* ---- vaporwave ----- */
+
+.vaporwave {
+  background: linear-gradient(100deg, rgb(88, 7, 99), rgb(138, 52, 150), rgb(72, 13, 167), rgb(26, 24, 136), rgb(68, 29, 104), rgb(61, 59, 216), rgb(88, 7, 99));
+  color: rgb(240, 240, 240);
+}
+
+.vaporwave button,
+.vaporwave .historyNav li {
+  margin: 5px 10px;
+  padding: 5px 55px;
+  background: rgb(88, 7, 99);
+}
+
+.vaporwave button:hover,
+.vaporwave .historyNav li:hover,
+.vaporwave button:focus,
+.vaporwave .historyNav li:focus {
+  background: rgb(6, 40, 231);
+}
+
+.vaporwave .dash aside,
+.vaporwave .singlePost {
+  background: rgb(213, 124, 240);
+  border: 2px solid rgb(45, 50, 77);
+  box-shadow: inset 0 0 40px 10px rgb(103, 118, 206);
+  color: rgb(34, 7, 59);
+}
+
+.vaporwave img {
+  box-shadow: 0 0 20px 10px rgb(231, 244, 255);
 }
